@@ -12,15 +12,9 @@ export default {
   handler: app
 }
 
-app.post(`/user`, async (req, res) => {
-    const result = await prisma.user.create({
-      data: {
-        email: req.body.email,
-        name: req.body.name,
-        ip: req.socket.remoteAddress
-      },
-    })
-    res.json(result)
+app.get('/get-goons', async (req, res) => {
+  const goonsdetails = await prisma.goonsdetail.findMany({})
+  res.json(goonsdetails)
 })
 
 app.post(`/add-goons`, async (req, res) => {

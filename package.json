@@ -5,7 +5,8 @@
     "studio": "prisma studio",
     "build": "nuxt build",
     "generate": "nuxt generate",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "deploy:heroku": "git push heroku main:master"
   },
   "dependencies": {
     "@livelybone/vue-datepicker": "^4.1.2",
